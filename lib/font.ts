@@ -1,30 +1,10 @@
-import {
-  IBM_Plex_Mono,
-  IBM_Plex_Sans,
-  Poppins,
-  Nunito,
-  DM_Sans,
-} from "next/font/google";
+import { Roboto, Montserrat } from "next/font/google";
 
-export const ibmPlexSans = IBM_Plex_Sans({
+export const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "800", "900"],
 });
-export const ibmPlexMono = IBM_Plex_Mono({
+export const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["400", "500"],
-});
-export const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-export const nunito = Nunito({
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
-export const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "900"],
 });
