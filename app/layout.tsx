@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { poppins } from "@/lib/font";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { montserrat } from "@/lib/font";
 
 export const metadata: Metadata = {
   title: "Votely",
@@ -24,7 +24,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>
+      <body className={`${montserrat.className} antialiased`}>
         {header}
         {children}
         {footer}
