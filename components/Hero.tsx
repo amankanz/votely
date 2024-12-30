@@ -54,7 +54,7 @@ import { montserrat } from "@/lib/font";
 export default function HeroSection() {
   return (
     <section
-      className={`relative w-full max-w-7xl h-[645px] mx-auto rounded-3xl bg-[url('/award_2.jpg')] bg-cover bg-center bg-no-repeat text-white`}
+      className={`relative w-full max-w-7xl h-[645px] mx-auto mt-12 rounded-3xl bg-[url('/award_2.jpg')] bg-cover bg-center bg-no-repeat text-white`}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/50 rounded-3xl "></div>
