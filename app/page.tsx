@@ -4,6 +4,9 @@ import Hero from "@/components/Hero";
 import Main from "@/components/Main";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import KeyFeatures from "@/components/KeyFeatures";
+import CTASection from "@/components/CTASection";
+import AwardsShowcase from "@/components/AwardsShowcase";
+import FAQSection from "@/components/FAQSection";
 
 export default function Home() {
   return (
@@ -13,6 +16,9 @@ export default function Home() {
       <FeaturedBusinesses />
       <CategoriesSection />
       <TestimonialsSection />
+      <CTASection />
+      <AwardsShowcase />
+      <FAQSection />
     </Main>
   );
 }
