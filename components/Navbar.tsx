@@ -49,8 +49,8 @@ export default function NavBar() {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center space-x-4">
-          <Button text="Join as a Business" variant="primary" />
-          <Button text="Sign In" variant="secondary" />
+          <Button link="/signup" text="Join as a Business" variant="primary" />
+          <Button link="/login" text="Sign In" variant="secondary" />
         </div>
 
         {/* Mobile Menu Button */}
@@ -98,14 +98,20 @@ export default function NavBar() {
               </Link>
             </li>
             <li>
-              <button className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+              {/* <button className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
                 Join as a Business
-              </button>
+              </button> */}
+              <Button
+                link="/signup"
+                text="Join as a Business"
+                variant="secondary"
+              />
             </li>
             <li>
-              <button className="w-full px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-100">
+              {/* <button className="w-full px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-100">
                 Sign In
-              </button>
+              </button> */}
+              <Button link="/login" text="Sign In" variant="secondary" />
             </li>
           </ul>
         </div>
