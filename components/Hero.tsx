@@ -54,8 +54,16 @@ export default function HeroSection() {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
-          <Button text="Explore Top Businesses" variant="primary" />
-          <Button text="Join as a Business" variant="secondary" />
+          <Button
+            link="/awards"
+            text="Explore Top Businesses"
+            variant="primary"
+          />
+          <Button
+            link="/signup"
+            text="Join as a Business"
+            variant="secondary"
+          />
         </div>
       </div>
     </section>
