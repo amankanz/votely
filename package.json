@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
     "firebase": "^11.1.0",
     "firebase-admin": "^13.0.2",

@@ -20,6 +20,7 @@ export async function POST(req: Request) {
 }
 */
 
+/*
 import { NextResponse } from "next/server";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
@@ -42,5 +43,40 @@ export async function POST(request: Request) {
     });
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 400 });
+  }
+}
+*/
+
+import { NextResponse } from "next/server";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { FirebaseError } from "@firebase/util";
+
+export async function POST(request: Request) {
+  const { email, password, userType } = await request.json();
+
+  try {
+    const auth = getAuth();
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    const user = userCredential.user;
+
+    return NextResponse.json({
+      message: "Login successful!",
+      userType,
+      accessToken: await user.getIdToken(),
+    });
+  } catch (error) {
+    if (error instanceof FirebaseError) {
+      return NextResponse.json({ error: error.message }, { status: 400 });
+    }
+
+    // Handle unexpected errors
+    return NextResponse.json(
+      { error: "An unexpected error occurred." },
+      { status: 500 }
+    );
   }
 }
