@@ -154,9 +154,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   output: "standalone",
-  images: {
-    domains: ["your-domain.com"],
-  },
+  // images: {
+  //   domains: ["your-domain.com"],
+  // },
 };
 
 export default nextConfig;
