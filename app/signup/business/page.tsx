@@ -245,6 +245,7 @@ import SelectInput from "@/components/Signup/SelectInput";
 import CheckboxInput from "@/components/Signup/CheckboxInput";
 import ErrorDisplay from "@/components/Signup/ErrorDisplay";
 import SubmitButton from "@/components/Signup/SubmitButton";
+import Link from "next/link";
 
 export default function Signup() {
   const [formData, setFormData] = useState({
@@ -393,6 +394,17 @@ export default function Signup() {
             label="Sign Up"
           />
         </form>
+
+        {/* CTA for Login */}
+        <p className="mt-6 text-center text-sm text-gray-600">
+          Already have an account?{" "}
+          <Link
+            href="/login"
+            className="text-blue-600 font-medium hover:underline"
+          >
+            Log in here
+          </Link>
+        </p>
       </div>
     </div>
   );

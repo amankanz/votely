@@ -124,6 +124,7 @@ import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link";
 import Button from "./Button";
+import { montserrat } from "@/lib/font";
 
 export default function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -176,9 +177,8 @@ export default function NavBar() {
           <Button
             link="/signup/customer"
             text="Join as a Customer"
-            variant="primary"
+            variant="secondary"
           />
-          <Button link="/login" text="Sign In" variant="secondary" />
         </div>
 
         {/* Mobile Menu Button */}
@@ -192,7 +192,7 @@ export default function NavBar() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
-          <ul className="flex flex-col space-y-4 p-4">
+          <ul className={`flex flex-col space-y-4 p-4 ${montserrat.className}`}>
             <li>
               <Link
                 href="/"
@@ -229,7 +229,7 @@ export default function NavBar() {
               <Button
                 link="/signup/business"
                 text="Join as a Business"
-                variant="secondary"
+                variant="primary"
               />
             </li>
             <li>
