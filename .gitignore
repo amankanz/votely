@@ -41,5 +41,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# votely
+# .votely
 .votely-4822c-firebase-adminsdk.json
