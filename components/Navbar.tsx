@@ -139,7 +139,9 @@ export default function NavBar() {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <Link href={"/"}>
-            <span className="text-lg font-bold">Votely</span>
+            <span className={`text-lg font-bold ${montserrat.className}`}>
+              Votely
+            </span>
           </Link>
         </div>
 

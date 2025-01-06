@@ -285,6 +285,7 @@ import PasswordInput from "@/components/Signup/PasswordInput";
 import CheckboxInput from "@/components/Signup/CheckboxInput";
 import ErrorDisplay from "@/components/Signup/ErrorDisplay";
 import SubmitButton from "@/components/Signup/SubmitButton";
+import { montserrat } from "@/lib/font";
 
 export default function CustomerSignup() {
   const [formData, setFormData] = useState({
@@ -355,7 +356,9 @@ export default function CustomerSignup() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
       <div className="w-full max-w-md md:max-w-4xl bg-white rounded-lg shadow-md p-8">
-        <h1 className="text-2xl font-bold text-center mb-6">
+        <h1
+          className={`text-2xl font-bold text-center mb-6 ${montserrat.className}`}
+        >
           Create Your Account 🌟
         </h1>
         <form className="space-y-4">
