@@ -1,4 +1,3 @@
-/*
 import { NextRequest, NextResponse } from "next/server";
 
 export async function middleware(req: NextRequest) {
@@ -53,7 +52,8 @@ export async function middleware(req: NextRequest) {
 export const config = {
   matcher: ["/business-dashboard", "/customer-dashboard"],
 };
-*/
+
+/*
 
 import { NextRequest, NextResponse } from "next/server";
 import { adminAuth } from "@/firebaseAdmin";
@@ -91,3 +91,4 @@ export async function middleware(req: NextRequest) {
 export const config = {
   matcher: ["/business-dashboard"],
 };
+*/
