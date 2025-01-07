@@ -278,6 +278,7 @@ export default function Signup() {
     if (
       !formData.email ||
       !formData.password ||
+      !formData.confirmPassword ||
       !formData.businessName ||
       !formData.contactNumber ||
       !formData.businessType ||
@@ -295,11 +296,19 @@ export default function Signup() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("/api/signup", {
+      const response = await fetch("/api/signup/business", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+
+      // Ensure JSON content type
+      const contentType = response.headers.get("content-type");
+      if (!contentType?.includes("application/json")) {
+        const textResponse = await response.text(); // Log the raw response
+        console.error("Unexpected Response:", textResponse);
+        throw new Error(`Unexpected content type: ${contentType}`);
+      }
 
       const data = await response.json();
 
@@ -309,8 +318,8 @@ export default function Signup() {
         setError(data.error || "Signup failed.");
       }
     } catch (err) {
-      console.error(err);
-      setError("Failed to sign up.");
+      console.error("Signup Error:", err);
+      setError(err instanceof Error ? err.message : "Failed to sign up.");
     } finally {
       setIsLoading(false);
     }

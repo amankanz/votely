@@ -92,7 +92,6 @@ const nextConfig: NextConfig = {
 export default nextConfig;
 */
 
-/*
 import type { NextConfig } from "next";
 import webpack from "webpack";
 
@@ -147,8 +146,8 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-*/
 
+/*
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -160,3 +159,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+*/

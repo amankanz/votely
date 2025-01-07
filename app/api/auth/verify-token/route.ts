@@ -1,4 +1,3 @@
-/*
 import { adminAuth } from "@/firebaseAdmin";
 import { NextResponse } from "next/server";
 
@@ -18,7 +17,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid token" }, { status: 401 });
   }
 }
-*/
 
 /*
 import { adminAuth } from "@/firebaseAdmin";
@@ -44,6 +42,7 @@ export async function POST(req: Request) {
 }
 */
 
+/*
 import { adminAuth } from "@/firebaseAdmin";
 import { NextResponse } from "next/server";
 
@@ -62,3 +61,4 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid token" }, { status: 401 });
   }
 }
+*/
