@@ -49,6 +49,7 @@ export async function POST(req: NextRequest) {
       password, // NO RECOMMENDED for security purpose!
       contactNumber,
       agreeToTerms,
+      userType: "Customer",
       createdAt: new Date(),
     });
 

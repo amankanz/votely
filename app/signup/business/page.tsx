@@ -90,6 +90,7 @@ export default function Signup() {
         setShowToastMsg(formData.businessName);
         setTimeout(() => {
           router.push(data.redirectTo || "/business-dashboard");
+          console.log("API Response:", data);
         }, 3000);
       } else {
         setError(data.error || "Signup failed.");

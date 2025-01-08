@@ -146,11 +146,16 @@ export async function POST(req: NextRequest) {
       businessType,
       agreeToTerms,
       password,
+      userType: "Business",
       createdAt: new Date(),
     });
 
+    // return NextResponse.json(
+    //   { message: "Signup successful!", redirectTo: "/business-dashboard" },
+    //   { status: 201 }
+    // );
     return NextResponse.json(
-      { message: "Signup successful!", redirectTo: "/business-dashboard" },
+      { message: "Signup successful!", redirectTo: "/login" },
       { status: 201 }
     );
   } catch (error: unknown) {
