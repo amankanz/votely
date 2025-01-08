@@ -3,30 +3,12 @@ import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// Ensure Firebase is initialized only once
-const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_APP_ID,
-};
-
-const firebaseApp = !getApps().length
-  ? initializeApp(firebaseConfig)
-  : getApp();
-
-export const auth = getAuth(firebaseApp);
-export const db = getFirestore(firebaseApp);
-export { firebaseApp };
-*/
-
-/*
-
-import { initializeApp, getApps, getApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+// Ensure all environment variables are defined
+if (!process.env.NEXT_PUBLIC_FIREBASE_API_KEY) {
+  throw new Error(
+    "NEXT_PUBLIC_FIREBASE_API_KEY is not defined in the environment variables."
+  );
+}
 
 // Your Firebase configuration
 const firebaseConfig = {
@@ -57,7 +39,7 @@ if (!process.env.NEXT_PUBLIC_FIREBASE_API_KEY) {
   );
 }
 
-// Your Firebase configuration
+// Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -67,9 +49,9 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
+// Initialize Firebase app (client-side)
 const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
 
-// Initialize Auth and Firestore
+// Initialize Auth and Firestore (client-side)
 export const auth = getAuth(app);
 export const firestore = getFirestore(app);
