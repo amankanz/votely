@@ -26,6 +26,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/webpack": "^5.28.5",
+    "daisyui": "^4.12.23",
     "eslint": "^9",
     "eslint-config-next": "15.1.3",
     "postcss": "^8",
