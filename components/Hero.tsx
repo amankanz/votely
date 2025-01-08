@@ -60,7 +60,7 @@ export default function HeroSection() {
             variant="primary"
           />
           <Button
-            link="/signup"
+            link="/signup/business"
             text="Join as a Business"
             variant="secondary"
           />
