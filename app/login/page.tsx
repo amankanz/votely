@@ -13,40 +13,6 @@ export default function Login() {
   const [error, setError] = useState("");
   const router = useRouter();
 
-  // const handleLogin = async () => {
-  //   if (!userType) {
-  //     setError("Please select your user type.");
-  //     return;
-  //   }
-
-  //   try {
-  //     const response = await fetch("/api/login", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify({ email, password, userType }),
-  //     });
-
-  //     if (response.ok) {
-  //       const data = await response.json();
-  //       // document.cookie = `token=${data.accessToken}; path=/;`;
-  //       document.cookie = `token=${data.accessToken}; path=/; Secure; HttpOnly; SameSite=Strict`;
-  //       document.cookie = `email=${encodeURIComponent(email)}; path=/;`;
-
-  //       router.push(
-  //         userType === "Business"
-  //           ? "/business-dashboard"
-  //           : "/customer-dashboard"
-  //       );
-  //     } else {
-  //       const data = await response.json();
-  //       setError(data.error);
-  //     }
-  //   } catch (err) {
-  //     console.error(err);
-  //     setError("Failed to log in.");
-  //   }
-  // };
-
   const handleLogin = async () => {
     if (!userType) {
       setError("Please select your user type.");
@@ -155,13 +121,7 @@ export default function Login() {
           </div>
 
           {/* Sign In Button */}
-          {/* <button
-            type="button"
-            onClick={handleLogin}
-            className="w-full md:w-96 bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 mx-auto"
-          >
-            Sign in
-          </button> */}
+
           <SubmitButton
             isLoading={isLoading}
             onClick={handleLogin}
