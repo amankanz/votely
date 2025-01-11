@@ -30,7 +30,7 @@ export default function NavBar() {
 
         {/* Desktop Menu */}
         <ul
-          className={`hidden md:flex items-center space-x-6 text-sm font-medium ${roboto.className}`}
+          className={`hidden lg:flex items-center space-x-6 text-sm font-medium ${roboto.className}`}
         >
           <li>
             <Link
@@ -83,7 +83,7 @@ export default function NavBar() {
         </ul>
 
         {/* Desktop Buttons */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-4">
           <Button
             link="/signup/business"
             text="Join as a Business"
@@ -97,7 +97,7 @@ export default function NavBar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
+        <div className="lg:hidden flex items-center">
           <button onClick={toggleMobileMenu} className="text-xl">
             {isMobileMenuOpen ? <FiX /> : <FiMenu />}
           </button>
@@ -106,7 +106,7 @@ export default function NavBar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
+        <div className="lg:hidden bg-white border-t border-gray-200">
           <ul className={`flex flex-col space-y-4 p-4 ${roboto.className}`}>
             <li>
               <Link

@@ -238,7 +238,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useState, useTransition } from "react";
 import { IoPersonSharp } from "react-icons/io5";
-import { FaRegSquare } from "react-icons/fa6";
+import { FaPersonRunning, FaRegSquare } from "react-icons/fa6";
 import { FaAward } from "react-icons/fa";
 import { SiGoogleanalytics } from "react-icons/si";
 import { RiLogoutBoxRFill } from "react-icons/ri";
@@ -267,26 +267,29 @@ function Sidebar() {
     <div>
       {/* User and Logout Section */}
       <div className="flex justify-between items-center bg-gray-100 p-4 sm:hidden">
-        <div className="flex items-center space-x-4">
-          <div className="w-10 h-10 bg-gray-300 rounded-full flex justify-center items-center">
-            J
+        <Link href="/business-dashboard">
+          <div className="flex items-center space-x-4">
+            <div className="w-10 h-10 bg-gray-300 rounded-full flex justify-center items-center">
+              J
+            </div>
+            <div>
+              <p className="font-semibold">June</p>
+              <p className="text-sm text-gray-500">Dashboard</p>
+            </div>
           </div>
-          <div>
-            <p className="font-semibold">June</p>
-            <p className="text-sm text-gray-500">Dashboard</p>
-          </div>
-        </div>
+        </Link>
         <button
           title="Logout"
           onClick={handleLogout}
-          className="text-gray-800 hover:text-blue-600"
+          className="text-gray-800 hover:text-blue-600 flex"
         >
+          <FaPersonRunning size={20} />
           <RiLogoutBoxRFill size={25} />
         </button>
       </div>
 
       {/* Sidebar Content */}
-      <aside className="hidden sm:flex w-64 bg-gray-100 p-6 border-r border-gray-200 flex-col h-screen">
+      <aside className="hidden lg:flex w-64 bg-gray-100 p-6 border-r border-gray-200 flex-col h-screen">
         <div className="mb-40">
           <Link href="/business-dashboard">
             <div className="flex items-center space-x-4 mb-8">
@@ -299,7 +302,7 @@ function Sidebar() {
               </div>
             </div>
           </Link>
-          <nav className="space-y-4">
+          <nav className="space-y-4 md:mb-40">
             {[
               {
                 href: "/business-dashboard/profile",
@@ -336,11 +339,21 @@ function Sidebar() {
               </button>
             ))}
           </nav>
+
+          {/* Logout Button */}
+          <button
+            title="Logout"
+            onClick={handleLogout}
+            className="w-full hidden md:flex items-center justify-center p-3 text-sm font-medium text-gray-800 bg-gray-300 hover:text-blue-600 hover:bg-blue-100 rounded-md mt-8"
+          >
+            <FaPersonRunning size={20} />
+            <RiLogoutBoxRFill size={25} />
+          </button>
         </div>
       </aside>
 
       {/* Mobile Navigation */}
-      <nav className="sm:hidden fixed bottom-0 w-full bg-gray-100 p-4 flex justify-around items-center border-t border-gray-200">
+      <nav className="lg:hidden fixed bottom-0 w-full bg-gray-100 p-4 flex justify-around items-center border-t border-gray-200">
         {[
           { href: "/business-dashboard/profile", icon: IoPersonSharp },
           { href: "/business-dashboard/services", icon: FaRegSquare },
