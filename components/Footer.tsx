@@ -92,6 +92,7 @@ export default function Footer() {
 import { CiFacebook } from "react-icons/ci";
 import { RiTwitterXFill } from "react-icons/ri";
 import { IoLogoInstagram } from "react-icons/io5";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -99,37 +100,40 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 text-center">
         {/* Navigation Links */}
         <div className="flex flex-wrap justify-center gap-6 mb-6 text-sm">
-          <a href="#" className="hover:text-blue-600">
+          <Link href="/" className="hover:text-blue-600">
             Home
-          </a>
-          <a href="#" className="hover:text-blue-600">
+          </Link>
+          <Link href="/about" className="hover:text-blue-600">
             About Us
-          </a>
-          <a href="#" className="hover:text-blue-600">
+          </Link>
+          <Link href="/awards" className="hover:text-blue-600">
             Awards
-          </a>
-          <a href="#" className="hover:text-blue-600">
+          </Link>
+          <Link
+            href="/business-dashboard/subscription"
+            className="hover:text-blue-600"
+          >
             Subscription Plans
-          </a>
-          <a href="#" className="hover:text-blue-600">
+          </Link>
+          <Link href="/developers" className="hover:text-blue-600">
             Developers
-          </a>
+          </Link>
         </div>
 
         {/* Social Media Links */}
         <div className="flex justify-center space-x-6 mb-6 text-lg">
-          <a href="#" aria-label="Twitter" className="hover:text-blue-600">
+          <Link href="#" aria-label="Twitter" className="hover:text-blue-600">
             {/* <i className="fab fa-twitter"></i> */}
             <RiTwitterXFill />
-          </a>
-          <a href="#" aria-label="Facebook" className="hover:text-blue-600">
+          </Link>
+          <Link href="#" aria-label="Facebook" className="hover:text-blue-600">
             {/* <i className="fab fa-facebook"></i> */}
             <CiFacebook />
-          </a>
-          <a href="#" aria-label="Instagram" className="hover:text-blue-600">
+          </Link>
+          <Link href="#" aria-label="Instagram" className="hover:text-blue-600">
             {/* <i className="fab fa-instagram"></i> */}
             <IoLogoInstagram />
-          </a>
+          </Link>
         </div>
 
         {/* Copyright */}

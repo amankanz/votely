@@ -127,6 +127,9 @@ import { FaPersonRunning, FaRegSquare } from "react-icons/fa6";
 import { FaAward } from "react-icons/fa";
 import { SiGoogleanalytics } from "react-icons/si";
 import { RiLogoutBoxRFill } from "react-icons/ri";
+import { FaRegCreditCard } from "react-icons/fa6";
+import { MdOutlineHelp } from "react-icons/md";
+import { TbSpeakerphone } from "react-icons/tb";
 import Spinner from "@/components/Spinner";
 
 function Sidebar() {
@@ -156,7 +159,7 @@ function Sidebar() {
     <div>
       {/* User and Logout Section */}
       <div className="flex justify-between items-center bg-gray-100 p-4 sm:hidden">
-        <Link href="/business-dashboard">
+        <button onClick={() => handleLinkClick("/business-dashboard")}>
           <div className="flex items-center space-x-4">
             <div className="w-10 h-10 bg-gray-300 rounded-full flex justify-center items-center">
               J
@@ -166,7 +169,7 @@ function Sidebar() {
               <p className="text-sm text-gray-500">Dashboard</p>
             </div>
           </div>
-        </Link>
+        </button>
         <button
           title="Logout"
           onClick={handleLogout}
@@ -213,6 +216,21 @@ function Sidebar() {
                 icon: SiGoogleanalytics,
                 label: "Insights & Analytics",
               },
+              {
+                href: "/business-dashboard/subscription",
+                icon: FaRegCreditCard,
+                label: "Subscriptions",
+              },
+              {
+                href: "/business-dashboard/help",
+                icon: MdOutlineHelp,
+                label: "Help",
+              },
+              {
+                href: "/business-dashboard/feedback",
+                icon: TbSpeakerphone,
+                label: "Feedback",
+              },
             ].map(({ href, icon: Icon, label }) => (
               <button
                 key={href}
@@ -242,12 +260,15 @@ function Sidebar() {
       </aside>
 
       {/* Mobile Navigation */}
-      <nav className="lg:hidden fixed bottom-0 w-full bg-gray-100 p-4 flex justify-around items-center border-t border-gray-200">
+      {/* <nav className="lg:hidden fixed bottom-0 w-full bg-gray-100 p-4 flex justify-around items-center border-t border-gray-200 overflow-x-scroll gap-4">
         {[
           { href: "/business-dashboard/profile", icon: IoPersonSharp },
           { href: "/business-dashboard/services", icon: FaRegSquare },
           { href: "/business-dashboard/awards", icon: FaAward },
           { href: "/business-dashboard/analytics", icon: SiGoogleanalytics },
+          { href: "/business-dashboard/subscription", icon: FaRegCreditCard },
+          { href: "/business-dashboard/help", icon: MdOutlineHelp },
+          { href: "/business-dashboard/feedback", icon: TbSpeakerphone },
         ].map(({ href, icon: Icon }) => (
           <button
             key={href}
@@ -259,6 +280,30 @@ function Sidebar() {
             <Icon size={25} />
           </button>
         ))}
+      </nav> */}
+
+      <nav className="lg:hidden fixed bottom-0 w-full bg-gray-100 px-4 py-3 flex items-center border-t border-gray-200 overflow-x-auto">
+        <div className="flex gap-6 w-full overflow-x-auto snap-x snap-mandatory">
+          {[
+            { href: "/business-dashboard/profile", icon: IoPersonSharp },
+            { href: "/business-dashboard/services", icon: FaRegSquare },
+            { href: "/business-dashboard/awards", icon: FaAward },
+            { href: "/business-dashboard/analytics", icon: SiGoogleanalytics },
+            { href: "/business-dashboard/subscription", icon: FaRegCreditCard },
+            { href: "/business-dashboard/help", icon: MdOutlineHelp },
+            { href: "/business-dashboard/feedback", icon: TbSpeakerphone },
+          ].map(({ href, icon: Icon }, index) => (
+            <button
+              key={index}
+              onClick={() => handleLinkClick(href)}
+              className={`flex-shrink-0 w-[20%] flex flex-col items-center justify-center snap-center transition-transform hover:scale-110 ${
+                isActive(href, pathname) ? "text-blue-600" : "text-gray-700"
+              }`}
+            >
+              <Icon size={28} />
+            </button>
+          ))}
+        </div>
       </nav>
 
       {/* Loading Spinner */}
