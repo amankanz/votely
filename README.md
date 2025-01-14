@@ -1,17 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Votely MVP 🚀
 
-## Getting Started with Votely
+Welcome to **Votely**, a platform in development to bring exciting new opportunities to businesses and customers. Stay tuned for updates!
 
-First, run the development server:
+## Getting Started
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/amankanz/votely.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the app in action.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
+
+- **Frontend:** Next.js
+- **Backend:** Firebase
+- **Hosting:** Vercel
+
+---
+
+**Written by [Amani K. Fred](https://github.com/amankanz), Co-Founder & CEO | Votely**
+
+Keep it MVP 👉 [votely.com](https://votely-pi.vercel.app/)
