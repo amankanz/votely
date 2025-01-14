@@ -209,7 +209,7 @@ function Sidebar() {
               {
                 href: "/business-dashboard/awards",
                 icon: FaAward,
-                label: "Submit for Awards",
+                label: "Awards",
               },
               {
                 href: "/business-dashboard/analytics",
@@ -260,28 +260,6 @@ function Sidebar() {
       </aside>
 
       {/* Mobile Navigation */}
-      {/* <nav className="lg:hidden fixed bottom-0 w-full bg-gray-100 p-4 flex justify-around items-center border-t border-gray-200 overflow-x-scroll gap-4">
-        {[
-          { href: "/business-dashboard/profile", icon: IoPersonSharp },
-          { href: "/business-dashboard/services", icon: FaRegSquare },
-          { href: "/business-dashboard/awards", icon: FaAward },
-          { href: "/business-dashboard/analytics", icon: SiGoogleanalytics },
-          { href: "/business-dashboard/subscription", icon: FaRegCreditCard },
-          { href: "/business-dashboard/help", icon: MdOutlineHelp },
-          { href: "/business-dashboard/feedback", icon: TbSpeakerphone },
-        ].map(({ href, icon: Icon }) => (
-          <button
-            key={href}
-            onClick={() => handleLinkClick(href)}
-            className={`hover:text-blue-600 ${
-              isActive(href, pathname) ? "text-blue-600" : "text-gray-800"
-            }`}
-          >
-            <Icon size={25} />
-          </button>
-        ))}
-      </nav> */}
-
       <nav className="lg:hidden fixed bottom-0 w-full bg-gray-100 px-4 py-3 flex items-center border-t border-gray-200 overflow-x-auto">
         <div className="flex gap-6 w-full overflow-x-auto snap-x snap-mandatory">
           {[
