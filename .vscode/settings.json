@@ -5,6 +5,7 @@
     "firebasestorage",
     "firestore",
     "Googleanalytics",
+    "Googlehome",
     "Votely"
   ]
 }
