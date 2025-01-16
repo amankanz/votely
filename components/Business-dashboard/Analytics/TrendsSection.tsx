@@ -191,7 +191,6 @@ const CustomTooltip: React.FC<TooltipProps<number, string>> = ({
 export default TrendsSection;
 */
 
-/*
 import React from "react";
 import {
   ResponsiveContainer,
@@ -227,7 +226,7 @@ const TrendsSection: React.FC = () => {
         Trends
       </h2>
       <div className="h-64 sm:h-72 lg:h-96">
-        <ResponsiveContainer width="100%" height="100%">
+        {/* <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={voteData}>
             <defs>
               <linearGradient id="colorVotes" x1="0" y1="0" x2="0" y2="1">
@@ -250,6 +249,48 @@ const TrendsSection: React.FC = () => {
               tickFormatter={(str) => {
                 const date = parseISO(str);
                 return format(date, "MMM 1"); // Display month and day (e.g., Jan 1)
+              }}
+              tick={{ fontSize: 12, dy: 6 }}
+            />
+
+            <YAxis
+              dataKey="votes"
+              axisLine={false}
+              tickLine={false}
+              tickFormatter={(value) => `${value} votes`}
+              tick={false}
+            />
+
+            <Tooltip content={<CustomTooltip />} />
+
+            <CartesianGrid opacity={0.1} vertical={false} />
+          </AreaChart>
+        </ResponsiveContainer> */}
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart data={voteData}>
+            <defs>
+              <linearGradient id="colorVotes" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.4} />
+                <stop offset="75%" stopColor="#3b82f6" stopOpacity={0.05} />
+              </linearGradient>
+            </defs>
+
+            <Area
+              type="monotone"
+              dataKey="votes"
+              stroke="#3b82f6"
+              strokeLinecap="round"
+              strokeWidth={5}
+              fill="url(#colorVotes)"
+            />
+
+            <XAxis
+              dataKey="date"
+              axisLine={false}
+              tickLine={false}
+              tickFormatter={(str) => {
+                const date = parseISO(str);
+                return format(date, "MMM d"); // Display month and day (e.g., Jan 1)
               }}
               tick={{ fontSize: 12, dy: 6 }}
             />
@@ -293,8 +334,8 @@ const CustomTooltip: React.FC<TooltipProps<number, string>> = ({
 };
 
 export default TrendsSection;
-*/
 
+/*
 import React from "react";
 import {
   ResponsiveContainer,
@@ -334,11 +375,11 @@ const TrendsSection: React.FC = () => {
         <h3 className="text-sm sm:text-lg lg:text-2xl text-gray-800 mb-4">
           Votes over time
         </h3>
-        {/* Scrollable container for mobile */}
+        {/* Scrollable container for mobile =/}
         <div className="overflow-x-auto">
           <div className="min-w-[600px] h-64 sm:h-72 lg:h-96">
             {" "}
-            {/* Minimum width for scroll */}
+            {/* Minimum width for scroll =/}
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={voteData}>
                 <defs>
@@ -409,3 +450,4 @@ const CustomTooltip: React.FC<TooltipProps<number, string>> = ({
 };
 
 export default TrendsSection;
+*/

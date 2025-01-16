@@ -130,6 +130,7 @@ import { RiLogoutBoxRFill } from "react-icons/ri";
 import { FaRegCreditCard } from "react-icons/fa6";
 import { MdOutlineHelp } from "react-icons/md";
 import { TbSpeakerphone } from "react-icons/tb";
+import { MdOutlineRateReview } from "react-icons/md";
 import Spinner from "@/components/Spinner";
 
 function Sidebar() {
@@ -212,6 +213,11 @@ function Sidebar() {
                 label: "Awards",
               },
               {
+                href: "/business-dashboard/reviews",
+                icon: MdOutlineRateReview,
+                label: "Review Moderation",
+              },
+              {
                 href: "/business-dashboard/analytics",
                 icon: SiGoogleanalytics,
                 label: "Insights & Analytics",
@@ -266,6 +272,7 @@ function Sidebar() {
             { href: "/business-dashboard/profile", icon: IoPersonSharp },
             { href: "/business-dashboard/services", icon: FaRegSquare },
             { href: "/business-dashboard/awards", icon: FaAward },
+            { href: "/business-dashboard/reviews", icon: MdOutlineRateReview },
             { href: "/business-dashboard/analytics", icon: SiGoogleanalytics },
             { href: "/business-dashboard/subscription", icon: FaRegCreditCard },
             { href: "/business-dashboard/help", icon: MdOutlineHelp },
