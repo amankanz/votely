@@ -161,7 +161,7 @@ export default function CustomerSignup() {
             />
 
             <CheckboxInput
-              label="I agree to the terms and conditions"
+              label="By signing up, I accept Votely's Privacy Policy and Terms of Use."
               name="agreeToTerms"
               onChange={handleChange}
             />
