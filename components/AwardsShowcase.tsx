@@ -12,17 +12,17 @@ function AwardsShowcase() {
         <AwardCard
           title="Elite Fitness Studio"
           description="Awarded Best Fitness Center of 2024"
-          image="/beauty_wellness.jpg"
+          image="/businesses/daniellee.jpg"
         />
         <AwardCard
           title="Gourmet Kitchen"
           description="Best Culinary Business Excellence"
-          image="/restaurant_cafe_2.jpg"
+          image="/businesses/coffee_purple.jpg"
         />
         <AwardCard
           title="Tech Solutions Inc."
           description="Innovative Technology Award Winner"
-          image="/hospitals_clinics.jpg"
+          image="/businesses/peno.jpg"
         />
       </div>
       <div className="flex justify-center mt-8">
