@@ -613,7 +613,10 @@ interface Service {
   id: number;
   name: string;
   category: string;
+  description: string;
+  recurringPrice: string;
   price: string;
+  tags: string;
   availability: string;
 }
 
@@ -625,9 +628,12 @@ const ServicesPage: React.FC = () => {
 
   const [newService, setNewService] = useState<Omit<Service, "id">>({
     name: "",
+    description: "",
     category: "",
     price: "",
-    availability: "In Stock",
+    recurringPrice: "",
+    tags: "",
+    availability: "Available",
   });
 
   // Add a new service
@@ -637,9 +643,12 @@ const ServicesPage: React.FC = () => {
     setFilteredServices((prev) => [...prev, newServiceWithId]);
     setNewService({
       name: "",
+      description: "",
       category: "",
       price: "",
-      availability: "In Stock",
+      recurringPrice: "",
+      tags: "",
+      availability: "Available",
     });
     setIsAddingService(false);
   };
@@ -674,11 +683,11 @@ const ServicesPage: React.FC = () => {
 
   // Filter services
   const handleFilter = (filter: string) => {
-    if (filter === "In Stock" || filter === "Out of Stock") {
+    if (filter === "Available" || filter === "Unavailable") {
       setFilteredServices(
         services.filter((service) => service.availability === filter)
       );
-    } else {
+    } else if (filter === "All") {
       setFilteredServices(services); // Show all services when "Available" is selected
     }
   };
@@ -694,48 +703,57 @@ const ServicesPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row h-screen">
+    <div className="flex flex-col sm:flex-row h-screen bg-gray-100">
       <Sidebar />
-      <main className="flex-1 bg-white p-8">
-        <h1 className="text-2xl font-bold mb-4">Services</h1>
-        {!isAddingService && !editingService && (
-          <FilterBar
-            onSearch={handleSearch}
-            onFilter={handleFilter}
-            onAddService={() => setIsAddingService(true)}
-          />
-        )}
-        {isAddingService ? (
-          <ServiceForm
-            service={newService}
-            onChange={(e) =>
-              setNewService({ ...newService, [e.target.name]: e.target.value })
-            }
-            onCancel={() => setIsAddingService(false)}
-            onSave={handleAddService}
-          />
-        ) : editingService ? (
-          <ServiceForm
-            service={editingService}
-            onChange={(e) =>
-              setEditingService({
-                ...editingService,
-                [e.target.name]: e.target.value,
-              } as Service)
-            }
-            onCancel={() => setEditingService(null)}
-            onSave={handleEditService}
-          />
-        ) : (
-          <ServiceTable
-            services={filteredServices.length > 0 ? filteredServices : services}
-            onEdit={(id) =>
-              setEditingService(services.find((service) => service.id === id)!)
-            }
-            onDelete={handleDeleteService}
-            onDuplicate={handleDuplicateService}
-          />
-        )}
+      <main className="flex-1 flex flex-col min-h-0">
+        <div className="flex-1 overflow-y-auto bg-white p-4 sm:p-6">
+          <h1 className="text-2xl font-bold mb-4">Services</h1>
+          {!isAddingService && !editingService && (
+            <FilterBar
+              onSearch={handleSearch}
+              onFilter={handleFilter}
+              onAddService={() => setIsAddingService(true)}
+            />
+          )}
+          {isAddingService ? (
+            <ServiceForm
+              service={newService}
+              onChange={(e) =>
+                setNewService({
+                  ...newService,
+                  [e.target.name]: e.target.value,
+                })
+              }
+              onCancel={() => setIsAddingService(false)}
+              onSave={handleAddService}
+            />
+          ) : editingService ? (
+            <ServiceForm
+              service={editingService}
+              onChange={(e) =>
+                setEditingService({
+                  ...editingService,
+                  [e.target.name]: e.target.value,
+                } as Service)
+              }
+              onCancel={() => setEditingService(null)}
+              onSave={handleEditService}
+            />
+          ) : (
+            <ServiceTable
+              services={
+                filteredServices.length > 0 ? filteredServices : services
+              }
+              onEdit={(id) =>
+                setEditingService(
+                  services.find((service) => service.id === id)!
+                )
+              }
+              onDelete={handleDeleteService}
+              onDuplicate={handleDuplicateService}
+            />
+          )}
+        </div>
       </main>
     </div>
   );

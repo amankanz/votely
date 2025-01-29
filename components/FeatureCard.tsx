@@ -1,7 +1,5 @@
 import React from "react";
 
-// import { FiAward, FiUsers, FiSettings, FiBarChart2 } from "react-icons/fi";
-
 interface FeatureProps {
   icon: React.ReactNode;
   title: string;

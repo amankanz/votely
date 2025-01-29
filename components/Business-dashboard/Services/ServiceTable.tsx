@@ -4,8 +4,11 @@ import React from "react";
 interface Service {
   id: number;
   name: string;
+  description: string;
   category: string;
   price: string;
+  recurringPrice: string;
+  tags: string;
   availability: string;
 }
 
@@ -53,7 +56,7 @@ const ServiceTable: React.FC<ServiceTableProps> = ({
               <td className="p-4 text-sm text-nowrap">
                 <span
                   className={`px-2 py-1 text-xs rounded-md ${
-                    service.availability === "In Stock"
+                    service.availability === "Available"
                       ? "bg-green-100 text-green-600"
                       : "bg-red-100 text-red-600"
                   }`}
