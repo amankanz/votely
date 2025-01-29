@@ -70,16 +70,22 @@ const FilterBar: React.FC<FilterBarProps> = ({
           Add Service
         </button>
         <button
-          onClick={() => onFilter("In Stock")}
-          className="px-3 py-1 text-sm md:text-base md:px-4 md:py-2 bg-green-500 text-white rounded-md"
+          onClick={() => onFilter("All")}
+          className="px-3 py-1 text-sm md:text-base md:px-4 md:py-2 bg-blue-500 text-white rounded-md"
         >
-          In Stock
+          All
         </button>
         <button
-          onClick={() => onFilter("Out of Stock")}
+          onClick={() => onFilter("Available")}
+          className="px-3 py-1 text-sm md:text-base md:px-4 md:py-2 bg-green-500 text-white rounded-md"
+        >
+          Available
+        </button>
+        <button
+          onClick={() => onFilter("Unavailable")}
           className="px-3 py-1 text-sm md:text-base md:px-4 md:py-2 bg-red-500 text-white rounded-md"
         >
-          Out of Stock
+          Unavailable
         </button>
       </div>
     </div>
