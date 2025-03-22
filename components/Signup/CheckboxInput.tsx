@@ -20,14 +20,16 @@ export default function CheckboxInput({
         className="h-4 w-4 text-blue-600 border-gray-300 rounded"
         onChange={onChange}
       />
-      <Link href={"/privacyPolicyAndTerms"}>
-        <label
-          htmlFor={name}
-          className="ml-2 text-sm text-gray-900 hover:text-gray-600 cursor-pointer"
+      <label htmlFor={name} className="ml-2 text-sm text-gray-900">
+        By signing up, I accept Votely&#39;s{" "}
+        <Link
+          className="text-blue-600 hover:text-blue-300 cursor-pointer"
+          href={"/privacyPolicyAndTerms"}
         >
           {label}
-        </label>
-      </Link>
+        </Link>{" "}
+        of Use.
+      </label>
     </div>
   );
 }

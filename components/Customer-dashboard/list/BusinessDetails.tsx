@@ -652,7 +652,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white rounded-lg shadow-lg max-w-4xl w-full mx-4 h-[60vh] flex flex-col">
+      <div className="bg-white rounded-lg shadow-lg max-w-4xl w-full mx-4 h-[80vh] flex flex-col">
         {/* Scrollable Content */}
         <div className="flex-1 overflow-y-auto">
           <div className="relative">
